@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom"
 import { LoginPage } from "../auth";
 import { PrivateRoute } from "./PrivateRoute";
-import { DashboardRoutes } from "../dashboard/routes/DashboardRoutes";
+import { HomePage } from "../dashboard/routes/HomePage";
 import { PublicRoute } from "./PublicRoute";
 import { RegisterPage } from "../auth/pages/RegisterPage";
 
@@ -22,7 +22,7 @@ export const AppRouter = () => {
 
             <Route path="/*" element={
               <PrivateRoute>
-                <DashboardRoutes/>
+                <HomePage/>
               </PrivateRoute>
             }/>
         </Routes>

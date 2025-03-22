@@ -18,8 +18,8 @@ export const AuthProvider = ({children}) => {
 
   const [authState, dispatch] = useReducer(authReducer, {}, init);
 
-  const login = () => {
-    const user = {name: 'el usuario', jwt: 'el token'};
+  const login = (email, jwt) => {
+    const user = {email, jwt};
     const action = { type: 'login', payload: user };
     dispatch(action);
 

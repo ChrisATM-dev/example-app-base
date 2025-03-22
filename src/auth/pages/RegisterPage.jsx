@@ -21,7 +21,7 @@ export const RegisterPage = () => {
     if (result.error_msg) {
       alert(result.error_msg);
     }else{
-      login();
+      login(email, result.token);
     }
   }
 
@@ -33,16 +33,16 @@ export const RegisterPage = () => {
             <div className='container-form-group'>
                 <div className='form-group'>
                     <label>Email</label>
-                    <input type="text" name='email' value={email} onChange={onInputChange}/>
+                    <input type="text" name='email' value={email} onChange={onInputChange} required/>
                 </div>
                 <div className='form-group'>
                     <label>Password</label>
-                    <input type={showPassword ? 'text': 'password'} name='password' value={password} onChange={onInputChange}/>
+                    <input type={showPassword ? 'text': 'password'} name='password' value={password} onChange={onInputChange} required/>
                     <button onClick={onShowPassword}>O_O</button>
                 </div>
                 <div className='form-group'>
                     <label>Confirm</label>
-                    <input type={showConfirm ? 'text': 'password'} name='confirm' value={confirm} onChange={onInputChange}/>
+                    <input type={showConfirm ? 'text': 'password'} name='confirm' value={confirm} onChange={onInputChange} required/>
                     <button onClick={onShowConfirm}>O_O</button>
                 </div>
             </div>
